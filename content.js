@@ -15,12 +15,10 @@ const translateText = async (text, sourceLanguage, targetLanguage) => {
 
     const data = await response.json();
     const translatedText = data.responseData.translatedText;
-
-    // Fallback to original text if translation is unsuccessful
     return translatedText || text;
   } catch (error) {
     console.error("Translation error:", error);
-    return text; // Return original text on error
+    return text;
   }
 };
 
